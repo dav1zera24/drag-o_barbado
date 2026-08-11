@@ -1,19 +1,8 @@
 import React from "react";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import Home from "./Pages/Home";
 
 function App() {
-  return (
-    <div className="min-h-screen bg-[#F5F2ED] text-[#0D0D0D]">
-      <NavBar />
-
-      <main>
-        {/* Conteúdo das páginas */}
-      </main>
-
-      <Footer />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
