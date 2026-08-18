@@ -195,7 +195,7 @@ function Sobre() {
               Dragão Barbado — feita por nós, para vocês.
             </p>
             <div className="mt-8">
-              <Button href="/contato" variant="light">Agendar horário</Button>
+              <Button href="/notfound" variant="light">Agendar horário</Button>
             </div>
           </div>
         </section>

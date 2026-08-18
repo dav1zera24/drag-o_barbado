@@ -5,15 +5,17 @@ import Home from "./Pages/Home";
 import Sobre from "./Pages/Sobre";
 import Produtos from "./Pages/Produtos";
 import FAQ from "./Pages/FAQ";
+import Notfound from "./Pages/Notfound";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="*" element={<Home />} />
         <Route path="/produtos" element={<Produtos />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/notfound" element={<Notfound />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

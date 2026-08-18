@@ -218,7 +218,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/contato"
+            href="/notfound"
             onClick={closeMenu}
             className="
               inline-flex
