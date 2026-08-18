@@ -15,7 +15,7 @@ function Home() {
           HERO
       ===================================================== */}
 
-      <section className="relative min-h-[calc(100vh-78px)] overflow-hidden bg-gradient-to-br from-dragon-black via-[#1b120d] to-dragon-brownDark">
+      <section className="relative isolate min-h-[calc(100vh-76px)] overflow-hidden bg-gradient-to-br from-dragon-black via-[#1b120d] to-dragon-brownDark">
 
         <div className="absolute inset-0 bg-black/20" />
 
@@ -23,11 +23,35 @@ function Home() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-dragon-black via-transparent to-dragon-black/30" />
 
+        {/* Imagem da caverna integrada ao hero */}
+
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] md:block lg:w-[55%]">
+
+          <div className="absolute inset-y-0 left-0 z-10 w-1/2 bg-gradient-to-r from-dragon-black via-dragon-black/80 to-transparent" />
+
+          <div className="absolute inset-y-[8%] right-[3%] w-[88%] overflow-hidden border border-dragon-beige/30 bg-dragon-brownDark/50 shadow-[-20px_20px_70px_rgba(0,0,0,0.45)] [clip-path:polygon(16%_0,100%_0,100%_100%,0_100%,10%_72%)]">
+
+            <img
+              src="/caverna-barbearia.png"
+              alt="Interior da Caverna Barbearia"
+              className="h-full w-full object-cover object-center opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d0d]/10 via-[#2a1a14]/10 to-[#0d0d0d]/70" />
+
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dragon-black/80 to-transparent" />
+
+          </div>
+
+          <div className="absolute right-[8%] top-[14%] h-[72%] w-[76%] border border-dragon-beige/25 opacity-70 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%,11%_72%)]" />
+
+        </div>
+
         {/* Conteúdo */}
 
-        <div className="relative mx-auto flex min-h-[calc(100vh-78px)] w-[92%] max-w-7xl items-center">
+        <div className="relative z-20 mx-auto flex min-h-[calc(100vh-76px)] w-[92%] max-w-7xl items-center">
 
-          <div className="max-w-3xl py-20">
+          <div className="max-w-2xl py-20 lg:py-28">
 
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-dragon-beige" />
@@ -113,7 +137,7 @@ function Home() {
 
         {/* Indicador inferior */}
 
-        <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-center sm:flex">
+        <div className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-3 text-center sm:flex">
 
           <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
             Explore
@@ -182,16 +206,26 @@ function Home() {
 
             <div className="relative overflow-hidden rounded-[24px] border border-dragon-beige/20 bg-gradient-to-br from-[#2b1d17] via-[#120d0b] to-[#090909] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
-              <div className="relative flex h-[450px] w-full items-end overflow-hidden rounded-[18px] bg-[radial-gradient(circle_at_top_left,_rgba(214,184,146,0.22),transparent_28%),linear-gradient(135deg,#432f25_0%,#1d120f_35%,#0d0d0d_100%)] p-8">
+              <div className="relative flex h-[450px] w-full items-end overflow-hidden rounded-[18px] bg-[#1d120f] p-8">
 
-                <div className="absolute inset-0 opacity-80">
+                <img
+                  src="/barbeiro-cabelo.png"
+                  alt="Cliente sendo atendido na barbearia"
+                  className="absolute inset-0 h-full w-full object-cover object-right"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/95 via-[#0d0d0d]/60 to-[#0d0d0d]/10" />
+
+                <div className="absolute inset-0 bg-gradient-to-br from-[#432f25]/35 via-transparent to-[#0d0d0d]/35" />
+
+                <div className="absolute inset-0 z-[1] opacity-60">
                   <div className="absolute left-6 top-8 h-20 w-20 rounded-full border border-dragon-beige/20" />
                   <div className="absolute right-10 top-10 h-32 w-32 rounded-full border border-white/10" />
                   <div className="absolute bottom-12 left-1/3 h-40 w-40 rounded-full border border-dragon-beige/15" />
                   <div className="absolute right-12 bottom-8 h-16 w-16 rounded-full bg-dragon-beige/10 blur-2xl" />
                 </div>
 
-                <div className="relative text-left">
+                <div className="relative z-10 text-left">
 
                   <span className="inline-flex rounded-full border border-dragon-beige/25 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-dragon-beige">
                     Dragão Barbado
@@ -328,7 +362,7 @@ function Home() {
               </p>
 
               <div className="mt-8">
-                <Button href="/contato">
+                <Button href="/notfound">
                   Agendar agora
                 </Button>
               </div>
@@ -531,7 +565,7 @@ function Home() {
 
           <div className="mt-9">
 
-            <Button href="/contato">
+            <Button href="/notfound">
               Agendar meu horário
             </Button>
 
