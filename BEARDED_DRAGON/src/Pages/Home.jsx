@@ -5,8 +5,6 @@ import Card from "../components/Card";
 import Title from "../components/Title";
 import Section from "../components/Section";
 
-import hero from "../assets/hero.png";
-
 function Home() {
   return (
     <div className="min-h-screen bg-dragon-white text-dragon-black">
@@ -17,21 +15,13 @@ function Home() {
           HERO
       ===================================================== */}
 
-      <section className="relative min-h-[calc(100vh-78px)] overflow-hidden bg-dragon-black">
+      <section className="relative min-h-[calc(100vh-78px)] overflow-hidden bg-gradient-to-br from-dragon-black via-[#1b120d] to-dragon-brownDark">
 
-        {/* Imagem de fundo */}
+        <div className="absolute inset-0 bg-black/20" />
 
-        <div className="absolute inset-0">
-          <img
-            src={hero}
-            alt="Dragão Barbado"
-            className="h-full w-full object-cover opacity-50"
-          />
+        <div className="absolute inset-0 bg-gradient-to-r from-dragon-black via-dragon-black/80 to-dragon-brownDark/40" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-dragon-black via-dragon-black/85 to-dragon-brownDark/50" />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-dragon-black via-transparent to-dragon-black/30" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dragon-black via-transparent to-dragon-black/30" />
 
         {/* Conteúdo */}
 
@@ -188,33 +178,44 @@ function Home() {
 
           <div className="relative">
 
-            <div className="absolute -right-4 -top-4 h-32 w-32 border-r-2 border-t-2 border-dragon-beige" />
+            <div className="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-dragon-beige/40 bg-dragon-beige/5" />
 
-            <div className="relative overflow-hidden bg-dragon-brownDark p-2">
+            <div className="relative overflow-hidden rounded-[24px] border border-dragon-beige/20 bg-gradient-to-br from-[#2b1d17] via-[#120d0b] to-[#090909] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
-              <img
-                src={hero}
-                alt="Interior da Dragão Barbado"
-                className="h-[450px] w-full object-cover opacity-80"
-              />
+              <div className="relative flex h-[450px] w-full items-end overflow-hidden rounded-[18px] bg-[radial-gradient(circle_at_top_left,_rgba(214,184,146,0.22),transparent_28%),linear-gradient(135deg,#432f25_0%,#1d120f_35%,#0d0d0d_100%)] p-8">
 
-              <div className="absolute inset-2 bg-gradient-to-t from-dragon-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 opacity-80">
+                  <div className="absolute left-6 top-8 h-20 w-20 rounded-full border border-dragon-beige/20" />
+                  <div className="absolute right-10 top-10 h-32 w-32 rounded-full border border-white/10" />
+                  <div className="absolute bottom-12 left-1/3 h-40 w-40 rounded-full border border-dragon-beige/15" />
+                  <div className="absolute right-12 bottom-8 h-16 w-16 rounded-full bg-dragon-beige/10 blur-2xl" />
+                </div>
 
-              <div className="absolute bottom-8 left-8">
+                <div className="relative text-left">
 
-                <span className="text-xs uppercase tracking-[0.3em] text-dragon-beige">
-                  Dragão Barbado
-                </span>
+                  <span className="inline-flex rounded-full border border-dragon-beige/25 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-dragon-beige">
+                    Dragão Barbado
+                  </span>
 
-                <h3 className="mt-2 text-3xl font-black uppercase text-white">
-                  Estilo & tradição
-                </h3>
+                  <h3 className="mt-4 text-3xl font-black uppercase leading-tight text-white">
+                    Estilo &
+                    <span className="mt-2 block text-dragon-beige">
+                      tradição
+                    </span>
+                  </h3>
+
+                  <div className="mt-5 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-stone-300">
+                    <span className="h-px w-8 bg-dragon-beige" />
+                    Cortes • Barba • Ambiente
+                  </div>
+
+                </div>
 
               </div>
 
             </div>
 
-            <div className="absolute -bottom-4 -left-4 h-24 w-24 border-b-2 border-l-2 border-dragon-brownLight" />
+            <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-tl-[18px] border-b-2 border-l-2 border-dragon-brownLight" />
 
           </div>
 
@@ -341,9 +342,7 @@ function Home() {
 
             <div className="flex min-h-[250px] flex-col justify-center border border-white/10 bg-black/20 p-8">
 
-              <span className="text-4xl text-dragon-beige">
-                ✂
-              </span>
+              
 
               <h3 className="mt-5 text-xl font-bold text-white">
                 Precisão
@@ -358,9 +357,7 @@ function Home() {
 
             <div className="flex min-h-[250px] flex-col justify-center border border-white/10 bg-black/30 p-8">
 
-              <span className="text-4xl text-dragon-beige">
-                ★
-              </span>
+           
 
               <h3 className="mt-5 text-xl font-bold text-white">
                 Qualidade
@@ -375,9 +372,7 @@ function Home() {
 
             <div className="flex min-h-[250px] flex-col justify-center border border-white/10 bg-black/30 p-8">
 
-              <span className="text-4xl text-dragon-beige">
-                ♛
-              </span>
+          
 
               <h3 className="mt-5 text-xl font-bold text-white">
                 Experiência
@@ -392,9 +387,7 @@ function Home() {
 
             <div className="flex min-h-[250px] flex-col justify-center border border-white/10 bg-black/20 p-8">
 
-              <span className="text-4xl text-dragon-beige">
-                ⚡
-              </span>
+            
 
               <h3 className="mt-5 text-xl font-bold text-white">
                 Personalidade
