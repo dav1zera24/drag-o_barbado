@@ -1,8 +1,20 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Home from "./Pages/Home";
+import Sobre from "./Pages/Sobre";
+import Produtos from "./Pages/Produtos";
 
 function App() {
-  return <Home />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="*" element={<Home />} />
+        <Route path="/produtos" element={<Produtos />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
