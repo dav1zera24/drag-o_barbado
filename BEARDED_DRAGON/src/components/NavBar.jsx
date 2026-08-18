@@ -227,6 +227,9 @@ function NavBar() {
           </a>
 
           <a
+leleo3
+            href="/notfound"
+            onClick={closeMenu}
             href="/contato"
             onClick={(event) => {
               closeMenu();
@@ -238,6 +241,7 @@ function NavBar() {
                 }
               }
             }}
+main
             className="
               inline-flex
               items-center

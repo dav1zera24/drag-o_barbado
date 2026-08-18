@@ -56,7 +56,7 @@ function Home() {
             <div className="mt-9 flex flex-wrap gap-4">
 
               <Button
-                href="/contato"
+                href="/notfound"
                 variant="primary"
               >
                 Agendar horário
