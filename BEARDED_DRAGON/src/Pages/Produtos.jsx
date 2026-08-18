@@ -2,10 +2,18 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import Title from "../components/Title";
 import Section from "../components/Section";
 
-// Lista de produtos mockados
+// Import das imagens
+import eduBlackPwr from "../assets/imgs/EduBlackPwr.png";
+import eduLoiro from "../assets/imgs/EduLoiro.png";
+import eduMoica from "../assets/imgs/EduMoica.png";
+import lula from "../assets/imgs/Lula.png";
+import messi from "../assets/imgs/Messi.png";
+import speed from "../assets/imgs/Speed.png";
+import therock from "../assets/imgs/TheRock.png";
+
+// Lista de Produtos/Serviços
 const PRODUTOS = [
   {
     id: 1,
@@ -13,15 +21,15 @@ const PRODUTOS = [
     categoria: "Barba",
     preco: "R$ 59,90",
     descricao: "Hidratação profunda com fragrância amadeirada e brilho natural.",
-    imagem: "https://images.unsplash.com/photo-1626285861696-9f0bf5a49c6d?auto=format&fit=crop&q=80&w=500"
+    imagem: eduBlackPwr
   },
   {
     id: 2,
     nome: "Pomada Matte Modeladora",
-    categoria: "Cabelo",
+    categoria: "Luzes",
     preco: "R$ 49,90",
     descricao: "Fixação forte sem brilho, ideal para penteados estruturados no dia a dia.",
-    imagem: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&q=80&w=500"
+    imagem: eduLoiro
   },
   {
     id: 3,
@@ -29,35 +37,45 @@ const PRODUTOS = [
     categoria: "Barba",
     preco: "R$ 45,00",
     descricao: "Acalma a pele, reduz irritações e previne foliculite pós-barbear.",
-    imagem: "https://images.unsplash.com/photo-1608248597260-6f216e58f63f?auto=format&fit=crop&q=80&w=500"
+    imagem: eduMoica
   },
   {
     id: 4,
     nome: "Shampoo Fortificante 2 em 1",
-    categoria: "Cabelo",
+    categoria: "Barba",
     preco: "R$ 54,90",
     descricao: "Limpeza profunda para cabelos e barba com extrato de menta e cevada.",
-    imagem: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=500"
+    imagem: lula
   },
   {
     id: 5,
-    nome: "Kit Lenhador Completo",
-    categoria: "Kits",
+    nome: "Tratamento de Luzes & Matização",
+    categoria: "Luzes",
     preco: "R$ 139,90",
-    descricao: "Inclui Óleo, Balm, Pente de madeira e Shampoo em estojo especial.",
-    imagem: "https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=500"
+    descricao: "Cuidado completo para fios descoloridos e platinados.",
+    imagem: messi,
   },
   {
     id: 6,
-    nome: "Pente de Madeira Duplo",
-    categoria: "Acessórios",
+    nome: "Corte & Estilo Express",
+    categoria: "Cabelo",
     preco: "R$ 29,90",
-    descricao: "Desfaz nós sem gerar estática nem frizz nos fios da barba.",
-    imagem: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=500"
+    descricao: "Manutenção rápida de corte com acabamento de pezinho.",
+    imagem: speed
+  },
+  {
+    id: 7,
+    nome: "Barba Imperial com Toalha Quente",
+    categoria: "Cabelo",
+    preco: "R$ 50,00",
+    descricao: "Modelagem completa da barba com protocolo de relaxamento.",
+    imagem: therock,
+    posicao: "object-top"
   }
 ];
 
-const CATEGORIAS = ["Todos", "Barba", "Cabelo", "Kits", "Acessórios"];
+// Apenas as categorias desejadas
+const CATEGORIAS = ["Todos", "Barba", "Cabelo", "Luzes"];
 
 function Produtos() {
   const [categoriaAtiva, setCategoriaAtiva] = useState("Todos");
@@ -122,7 +140,10 @@ function Produtos() {
                 <img
                   src={produto.imagem}
                   alt={produto.nome}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  /* Aqui aplicamos produto.posicao para empurrar a imagem para baixo quando necessário */
+                  className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
+                    produto.posicao || "object-center"
+                  }`}
                 />
                 <span className="absolute top-3 right-3 rounded border border-dragon-beige/30 bg-dragon-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-dragon-beige">
                   {produto.categoria}
