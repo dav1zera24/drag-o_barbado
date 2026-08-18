@@ -13,68 +13,68 @@ import messi from "../assets/imgs/Messi.png";
 import speed from "../assets/imgs/Speed.png";
 import therock from "../assets/imgs/TheRock.png";
 
-// Lista de Produtos/Serviços
+// Lista de Serviços / Estilos baseada nas fotos
 const PRODUTOS = [
   {
     id: 1,
-    nome: "Óleo para Barba Amber",
-    categoria: "Barba",
+    nome: "Black Power Respeito",
+    categoria: "Cabelo",
     preco: "R$ 59,90",
-    descricao: "Hidratação profunda com fragrância amadeirada e brilho natural.",
+    descricao: "Volume natural, presença marcante e formato impecável para quem não tem medo de destacar o estilo.",
     imagem: eduBlackPwr
   },
   {
     id: 2,
-    nome: "Pomada Matte Modeladora",
+    nome: "Loiro Platinado Executivo",
     categoria: "Luzes",
     preco: "R$ 49,90",
-    descricao: "Fixação forte sem brilho, ideal para penteados estruturados no dia a dia.",
+    descricao: "Aquele tom loiro perfeitamente penteado para impressionar na reunião ou no plenário.",
     imagem: eduLoiro
   },
   {
     id: 3,
-    nome: "Balm Pós-Barba Refrescante",
+    nome: "Barba & Corte Imponente",
     categoria: "Barba",
     preco: "R$ 45,00",
-    descricao: "Acalma a pele, reduz irritações e previne foliculite pós-barbear.",
+    descricao: "Barba cheia e alinhada com navalha, combinada com corte clássico e elegante.",
     imagem: eduMoica
   },
   {
     id: 4,
-    nome: "Shampoo Fortificante 2 em 1",
-    categoria: "Barba",
+    nome: "Dreadlocks Rasta Style",
+    categoria: "Cabelo",
     preco: "R$ 54,90",
-    descricao: "Limpeza profunda para cabelos e barba com extrato de menta e cevada.",
+    descricao: "Dreads trabalhados com acabamento artesanal para quem busca um visual alternativo e cheio de história.",
     imagem: lula
   },
   {
     id: 5,
-    nome: "Tratamento de Luzes & Matização",
+    nome: "Degradê Chavoso & Luzes Coloridas",
     categoria: "Luzes",
     preco: "R$ 139,90",
-    descricao: "Cuidado completo para fios descoloridos e platinados.",
-    imagem: messi,
+    descricao: "Pintura multicolorida no topo com degradê disfarçado na régua, perfeito para acompanhar a Juliet.",
+    imagem: messi
   },
   {
     id: 6,
-    nome: "Corte & Estilo Express",
+    nome: "Corte Espetado Energético",
     categoria: "Cabelo",
     preco: "R$ 29,90",
-    descricao: "Manutenção rápida de corte com acabamento de pezinho.",
+    descricao: "Penteado arrepiado com textura em alta fixação para quem vive no ritmo máximo e sem freio.",
     imagem: speed
   },
   {
     id: 7,
-    nome: "Barba Imperial com Toalha Quente",
+    nome: "Chiquinhas Mágicas & Presilhas",
     categoria: "Cabelo",
     preco: "R$ 50,00",
-    descricao: "Modelagem completa da barba com protocolo de relaxamento.",
+    descricao: "Penteado com coques duplos e lacinhos rosas para provar que a verdadeira masculinidade também sabe ser fofa.",
     imagem: therock,
-    posicao: "object-top"
+    posicao: "object-top" // Garante que o topo da cabeça com as chiquinhas apareça
   }
 ];
 
-// Apenas as categorias desejadas
+// Categorias disponíveis
 const CATEGORIAS = ["Todos", "Barba", "Cabelo", "Luzes"];
 
 function Produtos() {
@@ -86,7 +86,7 @@ function Produtos() {
       : PRODUTOS.filter((p) => p.categoria === categoriaAtiva);
 
   const handleComprarWhatsApp = (nomeProduto) => {
-    const mensagem = encodeURIComponent(`Olá! Gostaria de encomendar o produto: ${nomeProduto}`);
+    const mensagem = encodeURIComponent(`Olá! Gostaria de agendar/encomendar o estilo: ${nomeProduto}`);
     window.open(`https://wa.me/5500000000000?text=${mensagem}`, "_blank");
   };
 
@@ -101,15 +101,15 @@ function Produtos() {
             Cuidado Masculino
           </span>
           <h1 className="mt-3 text-4xl font-black uppercase text-dragon-white sm:text-5xl md:text-6xl">
-            Nossos <span className="text-dragon-beige">Produtos</span>
+            Nossos <span className="text-dragon-beige">Estilos</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-stone-300">
-            Linha selecionada e testada por nossos barbeiros para manter seu estilo e cuidados em dia.
+            Confira nosso catálogo de cortes e transformações exclusivas testadas por nossos melhores barbeiros.
           </p>
         </div>
       </section>
 
-      {/* Seção Principal de Produtos */}
+      {/* Seção Principal */}
       <Section dark>
         {/* Filtro por Categoria */}
         <div className="mb-12 flex flex-wrap justify-center gap-3">
@@ -128,19 +128,18 @@ function Produtos() {
           ))}
         </div>
 
-        {/* Grid de Produtos */}
+        {/* Grid de Cards */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {produtosFiltrados.map((produto) => (
             <div
               key={produto.id}
               className="group flex flex-col overflow-hidden rounded-lg border border-white/10 bg-black/40 transition-all duration-300 hover:border-dragon-beige/50"
             >
-              {/* Imagem do Produto */}
+              {/* Imagem do Produto/Serviço */}
               <div className="relative h-64 overflow-hidden bg-dragon-brownDark/20">
                 <img
                   src={produto.imagem}
                   alt={produto.nome}
-                  /* Aqui aplicamos produto.posicao para empurrar a imagem para baixo quando necessário */
                   className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
                     produto.posicao || "object-center"
                   }`}
