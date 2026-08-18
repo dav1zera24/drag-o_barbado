@@ -27,9 +27,23 @@ function Button({
 
   const classes = `${baseClasses} ${variants[variant]} ${className}`;
 
+  const handleClick = (event) => {
+    if (onClick) onClick(event);
+
+    if (!href || href === "/") return;
+
+    if (href === "/contato" && window.location.pathname === "/") {
+      event.preventDefault();
+      const target = document.getElementById("contato");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} onClick={handleClick} className={classes}>
         {children}
       </a>
     );
