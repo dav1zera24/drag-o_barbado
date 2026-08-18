@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
@@ -10,7 +10,7 @@ body {
 
 @import "tailwindcss";
 
-@theme {
+.theme {
   --color-dragon-black: #0D0D0D;
   --color-dragon-dark: #171513;
   --color-dragon-brownDark: #2A1A14;
