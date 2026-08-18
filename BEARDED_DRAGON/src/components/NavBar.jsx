@@ -202,7 +202,16 @@ function NavBar() {
 
           <a
             href="/contato"
-            onClick={closeMenu}
+            onClick={(event) => {
+              closeMenu();
+              if (window.location.pathname === "/") {
+                event.preventDefault();
+                const target = document.getElementById("contato");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }
+            }}
             className="
               relative
               py-2
@@ -219,7 +228,16 @@ function NavBar() {
 
           <a
             href="/contato"
-            onClick={closeMenu}
+            onClick={(event) => {
+              closeMenu();
+              if (window.location.pathname === "/") {
+                event.preventDefault();
+                const target = document.getElementById("contato");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }
+            }}
             className="
               inline-flex
               items-center
